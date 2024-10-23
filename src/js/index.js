@@ -1,4 +1,6 @@
-// Collapse
+/**
+ * Collapse Side-Pane Events
+ */ 
 const sidepaneEl = document.querySelector(".side-pane");
 const collapseEl = document.querySelector("li.collapse-btn");
 
@@ -10,14 +12,18 @@ collapseEl.addEventListener("click", function (event) {
   }
 });
 
+/**
+ * Modal Events
+ */
+
 // Get the modal
 const modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
 const btn = document.getElementById("openModal");
 
-// Get the <span> element that closes the modal
-const span = document.getElementsByClassName("close")[0];
+// Get the <img> element that closes the modal
+const closeImg = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal
 btn.onclick = function () {
@@ -25,7 +31,7 @@ btn.onclick = function () {
 };
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function () {
+closeImg.onclick = function () {
   modal.style.display = "none";
 };
 
@@ -36,7 +42,9 @@ window.onclick = function (event) {
   }
 };
 
-/** theme switch */
+/**
+ * Theme Switch Events
+ */
 const toggleThemeButton = document.getElementById("toggle-theme");
 
 // Check if dark mode is already set in local storage
@@ -56,7 +64,9 @@ toggleThemeButton.addEventListener("click", () => {
   }
 });
 
-/** media query for side-pane */
+/** 
+ * Media Query for Side-Pane 
+ */
 const mediaQuery = window.matchMedia("(max-width: 1268px)");
 
 function updateLayout(e) {
@@ -69,13 +79,14 @@ function updateLayout(e) {
   }
 }
 
-mediaQuery.addEventListener("change", updateLayout);610117017856-18r92fp91q43hib4fjnt999i9u3968l5.apps.googleusercontent.com
+mediaQuery.addEventListener("change", updateLayout);
 
 // Initial check
 updateLayout(mediaQuery);
 
+
 /**
- * custom select events
+ * Custom Select Events
  */
 
 // Function to close all select dropdowns
