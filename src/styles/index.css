@@ -12,6 +12,7 @@
   --border: #f1f5f9;
   --card-border: #f2f2f7;
   --table-head: #f1f5f9;
+  --modal-footer-background: #f8fafc;
 
   --completed-background: #d1fae5;
   --in-progress-background: #dbeafe;
@@ -36,6 +37,7 @@
     --border: #484554;
     --card-border: #484554;
     --table-head: #6a6676;
+    --modal-footer-background: #ada9bb;
 
     --completed-background: transparent;
     --in-progress-background: transparent;
@@ -150,6 +152,18 @@ body {
   align-items: center;
 }
 
+.closed .side-pane {
+  width: 0rem;
+  border: none;
+  overflow: hidden;
+}
+
+.closed .side-pane .logo-container {
+  width: 0rem;
+  overflow: hidden;
+  display: none;
+}
+
 .collapsible .side-pane .logo-container {
   width: 2rem;
   height: 2rem;
@@ -242,7 +256,12 @@ body {
   width: calc(100% - var(--sidebar-width));
   margin-left: var(--sidebar-width);
   background-color: var(--background);
-  padding: 1.75rem;
+  transition: width 0.25s ease-in;
+}
+
+.closed .main-container {
+  width: 100%;
+  margin-left: 0;
 }
 
 .collapsible .main-container {
@@ -252,7 +271,7 @@ body {
 
 /** header */
 .app-header {
-  padding-block: 0.75rem 1.5rem;
+  padding: 1rem;
 
   h1 {
     font-size: 1.375rem;
@@ -263,7 +282,7 @@ body {
 /** Metrics / Metric Cards */
 .metrics {
   display: grid;
-  grid-template-columns: repeat(4, minmax(16.25rem, min-content));
+  grid-template-columns: 1fr;
   grid-template-rows: 5.5rem;
   gap: 0.75rem;
   margin-bottom: 2.125rem;
@@ -289,18 +308,19 @@ body {
 
 .event-analytics .grid-columns {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 0.75rem;
 }
 
 .event-analytics .grid-columns .grid-item {
+  /* this grid container has a height of 20rem, but making it stretch works better to contained it's content  */
   /* height: 20rem; */
   background-color: var(--background-100);
   border: 0.0625rem solid var(--card-border);
 }
 
 .event-analytics .grid-columns .grid-item:first-child {
-  padding: 2.5rem;
+  padding: 0.5rem;
 }
 
 /** Slider */
@@ -323,7 +343,8 @@ body {
 .slider .slide img {
   display: block;
   width: 100%;
-  /* height: 20rem; */ /* this slider container has a height of 20rem, but making it stretch to contained it  */
+  /* this slider container has a height of 20rem, but making it stretch works better to contained it's content  */
+  /* height: 20rem; */
   object-fit: cover;
 }
 
@@ -428,8 +449,13 @@ body {
 /** Filter Inputs */
 .event-filters {
   display: flex;
-  align-items: center;
+
+  flex-direction: column;
+  align-items: stretch;
+
+  /* align-items: center; */
   justify-content: space-between;
+  gap: 0.5rem;
   margin-bottom: 1rem;
   font-size: 0.875rem;
 }
@@ -447,6 +473,7 @@ input:focus {
 }
 
 .search-container {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -481,7 +508,6 @@ input:focus {
 .custom-select {
   position: relative;
   display: inline-block;
-  width: fit-content;
 }
 
 .select-selected {
@@ -614,14 +640,18 @@ input:focus {
 
   .modal-footer {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
     justify-content: space-between;
+    gap: 0.5rem;
+    background-color: var(--modal-footer-background);
     padding: 1.5rem;
   }
 }
 
 /** Button */
 .btn {
+  width: 100%;
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
 
@@ -664,26 +694,41 @@ input:focus {
 }
 
 /** Media Queries for Responsiveness */
-@media screen and (max-width: 1400px) {
+@media screen and (min-width: 1400px) {
+  .app-header {
+    padding: 2.5rem 1.75rem 1.5rem 1.75rem;
+  }
+
   .metrics {
-    grid-template-columns: repeat(auto-fit, minmax(16.25rem, 1fr));
+    grid-template-columns: repeat(4, minmax(16.25rem, min-content));
   }
 
   .event-analytics .grid-columns {
-    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
-}
 
-@media screen and (max-width: 800px) {
-  .event-analytics .grid-columns {
-    grid-template-columns: 1fr;
+  .event-analytics .grid-columns .grid-item:first-child {
+    padding: 2.5rem;
+  }
+
+  .event-filters {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .search-container,
+  .custom-select {
+    width: fit-content;
   }
 
   .btn {
-    width: 100%;
+    width: fit-content;
   }
 
-  .modal-footer {
-    flex-direction: column;
+  .modal {
+    .modal-footer {
+      align-items: center;
+      flex-direction: row;
+    }
   }
 }

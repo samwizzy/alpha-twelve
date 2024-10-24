@@ -1,6 +1,6 @@
 /**
  * Collapse Side-Pane Events
- */ 
+ */
 const sidepaneEl = document.querySelector(".side-pane");
 const collapseEl = document.querySelector("li.collapse-btn");
 
@@ -10,6 +10,15 @@ collapseEl.addEventListener("click", function (event) {
   } else {
     document.body.classList.add("collapsible");
   }
+});
+
+/**
+ * Toggle Side-Pane with hamburger
+ */
+const hamburger = document.querySelector("#hamburger");
+
+hamburger.addEventListener("click", function (event) {
+  document.body.classList.toggle("closed");
 });
 
 /**
@@ -64,18 +73,18 @@ toggleThemeButton.addEventListener("click", () => {
   }
 });
 
-/** 
- * Media Query for Side-Pane 
+/**
+ * Media Query for Side-Pane
  */
 const mediaQuery = window.matchMedia("(max-width: 1268px)");
 
 function updateLayout(e) {
   if (e.matches) {
     // Mobile layout
-    document.body.classList.add("collapsible");
+    document.body.classList.add("closed");
   } else {
     // Desktop layout
-    document.body.classList.remove("collapsible");
+    document.body.classList.remove("closed");
   }
 }
 
@@ -83,7 +92,6 @@ mediaQuery.addEventListener("change", updateLayout);
 
 // Initial check
 updateLayout(mediaQuery);
-
 
 /**
  * Custom Select Events

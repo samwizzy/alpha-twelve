@@ -6,18 +6,27 @@ This application allows users to view and manage events. It features monthly met
 
 ## Features
 
-- **Monthly Metrics**: Visualize event data using interactive charts.
-- **Event Slider**: Navigate through events easily with a slider.
+- **Monthly Events Metrics**: Visualization of the total number of events for each month using interactive **Chart.js**.
+- **Event Slider**: A user-friendly slider for navigate through events easily with a slider.
 - **List of Events**: View detailed information about each event.
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices.
+- **Mobile-First Design**: Optimized for mobile devices, with responsive layouts for larger screens.
+- **Utility-First CSS**: Styled using **Tailwind CSS**, enabling quick and easy application of styles with minimal custom CSS.
+- **Inter Font**: The **Inter** font family is used throughout the application for a clean and modern look.
 
-## Technologies Used
+## Libraries and Tools
 
-- HTML
-- CSS
-- JavaScript
-- Chart.js
-- Responsive Design Techniques
+- **HTML5 & CSS3**: Structure and styling of the application.
+- **JavaScript (ES6)**: For application logic, including event handling and dynamic content rendering.
+- **Tailwind CSS**: For rapid, utility-first styling and normalization of default styles across browsers.
+- **Chart.js**: To visualize monthly event metrics in a clean, easy-to-understand format.
+- **Google Fonts (Inter)**: For typography, providing a modern and readable font style.
+
+## Future Enhancements
+
+- [ ] Add event filtering and search functionality.
+- [ ] Allow users to add or edit events directly through the interface.
+- [ ] Integrate a backend to store event data persistently (e.g., using a database or an API).
+- [ ] Add user authentication for personal event management.
 
 ## Getting Started
 
@@ -29,6 +38,35 @@ This application allows users to view and manage events. It features monthly met
 ### Installation
 
 1. Clone the repository:
+
    ```bash
-   git clone https://github.com/yourusername/events-application.git
-   cd events-application
+   git clone https://github.com/samwizzy/alpha-twelve.git
+   cd alpha-twelve
+
+   ```
+
+2. Project structure:
+   ```bash
+   /alpha-twelve
+   │
+   ├── src
+   ├── assets
+   ├── js
+   │   ├── index.js # JavaScript logic for event handling
+   │   ├── chart.js # Chart.js library
+   │   └── slider.min.js # Slider.js library
+   ├── styles
+   │   └── index.css # Custom styles for the application
+   └── index.html # Main HTML file
+   ```
+
+## License
+
+This project is licensed under the MIT License.
+
+## Author
+
+**Samuel Okeke**  
+Senior Frontend Developer  
+[GitHub Profile](https://github.com/samwizzy)  
+[LinkedIn Profile](https://linkedin.com/in/samuel-okeke)

@@ -14,6 +14,7 @@
     <title>Alpha Twelve</title>
   </head>
   <body>
+    <!-- Sidepane -->
     <aside class="side-pane" aria-label="Sidebar">
       <div class="logo-container">
         <h1 class="text-sm">Full Logo</h1>
@@ -200,12 +201,23 @@
       </nav>
     </aside>
 
+    <!-- Main Container -->
     <main class="main-container">
       <header class="app-header">
-        <h1 class="header-title">Welcome! here’s your summary</h1>
+        <div class="flex xl:hidden items-center justify-between">
+          <div class="h-12 grid place-content-center p-2 border border-dashed border-[var(--primary)]">
+            <p class="text-xs font-semibold">Full Logo</p>
+          </div>
+
+          <button id="hamburger" class="w-8 h-8 grid place-content-center">
+            <img src="./assets/icons/hamburger.svg" alt="hamburger" />
+          </button>
+        </div>
+
+        <h1 class="xl:block hidden">Welcome! here’s your summary</h1>
       </header>
 
-      <section>
+      <section class="px-5 xl:px-7 pb-10">
         <div class="metrics">
           <div class="metric-card">
             <div class="flex items-center gap-1">
@@ -262,7 +274,7 @@
 
           <div class="grid-columns">
             <div class="grid-item">
-              <canvas id="myChart"></canvas>
+              <!-- <canvas id="myChart"></canvas> -->
             </div>
 
             <div class="grid-item">
@@ -292,7 +304,7 @@
           <h2>Events History</h2>
 
           <div class="event-filters">
-            <div class="flex items-center gap-2">
+            <div class="flex xl:flex-row flex-col xl:items-center gap-2">
               <div class="search-container">
                 <img src="./assets/icons/search.svg" alt="search icon" />
                 <input type="text" class="search-input" placeholder="Search..." />
@@ -325,14 +337,14 @@
                 </div>
               </div>
 
-              <p class="text-sm">Displaying 100 results</p>
+              <p class="text-sm font-semibold">Displaying 100 results</p>
             </div>
 
-            <div class="flex items-center gap-2">
-              <div class="flex items-center gap-2">
+            <div class="flex xl:flex-row flex-col xl:items-center gap-2">
+              <div class="flex items-center justify-between gap-2">
                 <p class="text-sm">Sort:</p>
 
-                <div class="custom-select">
+                <div class="custom-select w-fit xl:w-full">
                   <div class="select-selected">Most Recent</div>
                   <div class="select-items select-hide">
                     <div>Option 1</div>
@@ -342,28 +354,30 @@
                 </div>
               </div>
 
-              <button class="more-btn">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M10.4166 5.83333C10.4166 6.06345 10.23 6.25 9.99992 6.25C9.7698 6.25 9.58325 6.06345 9.58325 5.83333C9.58325 5.60321 9.7698 5.41666 9.99992 5.41666C10.23 5.41666 10.4166 5.60321 10.4166 5.83333Z"
-                    stroke="var(--foreground)"
-                  />
-                  <path
-                    d="M10.4166 10C10.4166 10.2301 10.23 10.4167 9.99992 10.4167C9.7698 10.4167 9.58325 10.2301 9.58325 10C9.58325 9.76988 9.7698 9.58333 9.99992 9.58333C10.23 9.58333 10.4166 9.76988 10.4166 10Z"
-                    stroke="var(--foreground)"
-                  />
-                  <path
-                    d="M10.4166 14.1667C10.4166 14.3968 10.23 14.5833 9.99992 14.5833C9.7698 14.5833 9.58325 14.3968 9.58325 14.1667C9.58325 13.9365 9.7698 13.75 9.99992 13.75C10.23 13.75 10.4166 13.9365 10.4166 14.1667Z"
-                    stroke="var(--foreground)"
-                  />
-                </svg>
-              </button>
+              <div class="flex justify-between items-center gap-2">
+                <button class="more-btn">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M10.4166 5.83333C10.4166 6.06345 10.23 6.25 9.99992 6.25C9.7698 6.25 9.58325 6.06345 9.58325 5.83333C9.58325 5.60321 9.7698 5.41666 9.99992 5.41666C10.23 5.41666 10.4166 5.60321 10.4166 5.83333Z"
+                      stroke="var(--foreground)"
+                    />
+                    <path
+                      d="M10.4166 10C10.4166 10.2301 10.23 10.4167 9.99992 10.4167C9.7698 10.4167 9.58325 10.2301 9.58325 10C9.58325 9.76988 9.7698 9.58333 9.99992 9.58333C10.23 9.58333 10.4166 9.76988 10.4166 10Z"
+                      stroke="var(--foreground)"
+                    />
+                    <path
+                      d="M10.4166 14.1667C10.4166 14.3968 10.23 14.5833 9.99992 14.5833C9.7698 14.5833 9.58325 14.3968 9.58325 14.1667C9.58325 13.9365 9.7698 13.75 9.99992 13.75C10.23 13.75 10.4166 13.9365 10.4166 14.1667Z"
+                      stroke="var(--foreground)"
+                    />
+                  </svg>
+                </button>
 
-              <button class="export-btn">
-                <img src="./assets/icons/download.svg" alt="download" />
+                <button class="export-btn">
+                  <img src="./assets/icons/download.svg" alt="download" />
 
-                <span>Export</span>
-              </button>
+                  <span>Export</span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -467,7 +481,7 @@
             <div class="modal-footer">
               <button class="btn btn-outlined">Edit</button>
 
-              <div class="flex items-center gap-2">
+              <div class="flex xl:flex-row flex-col xl:items-center gap-2">
                 <button class="btn btn-danger">Delete</button>
                 <button class="btn btn-primary">Mark as completed</button>
               </div>
@@ -477,6 +491,7 @@
       </section>
     </main>
 
+    <!-- Script files -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/slider.js"></script>
