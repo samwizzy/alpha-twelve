@@ -18,8 +18,14 @@ This application allows users to view and manage events. It features monthly met
 - **HTML5 & CSS3**: Structure and styling of the application.
 - **JavaScript (ES6)**: For application logic, including event handling and dynamic content rendering.
 - **Tailwind CSS**: For rapid, utility-first styling and normalization of default styles across browsers.
-- **Chart.js**: To visualize monthly event metrics in a clean, easy-to-understand format.
+- **Chart.js**: To visualize monthly event metrics in a clean, easy-to-understand format.   
 - **Google Fonts (Inter)**: For typography, providing a modern and readable font style.
+
+| Library Used         |                                                                                         | 
+|----------------------|-----------------------------------------------------------------------------------------|
+| Tailwindcss          | ![Static Badge](https://img.shields.io/badge/CSS-tailwindcss-blue?logo=tailwindcss)     | 
+| Chart.js             | ![Static Badge](https://img.shields.io/badge/JS-chartjs-blue?logo=chartdotjs)           | 
+
 
 ## Future Enhancements
 
@@ -63,6 +69,8 @@ This application allows users to view and manage events. It features monthly met
 ## License
 
 This project is licensed under the MIT License.
+
+![Static Badge](https://img.shields.io/github/license/samwizzy/alpha-twelve)  
 
 ## Author
 
